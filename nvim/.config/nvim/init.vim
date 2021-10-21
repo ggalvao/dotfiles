@@ -3,7 +3,6 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set exrc
-set guicursor=
 set relativenumber
 set nu
 set nohlsearch
@@ -33,8 +32,16 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-fugitive'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
 call plug#end()
 
 let mapleader = " "
 colorscheme gruvbox
 highlight Normal guibg=none
+
+lua require'lspconfig'.gopls.setup{on_attach=require'completion'.on_attach}
+
+
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>

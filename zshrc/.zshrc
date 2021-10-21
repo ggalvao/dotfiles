@@ -1,7 +1,7 @@
 alias vim="nvim"
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:$PWD/go/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="$PWD/.oh-my-zsh"
